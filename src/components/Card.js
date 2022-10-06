@@ -1,5 +1,5 @@
 import './Card.css';
-
+import { Link } from 'react-router-dom';
 const Card = ({pokemon}) => {
     return(
     <div className='card'>
@@ -11,6 +11,8 @@ const Card = ({pokemon}) => {
         <div>
             <span>$</span><span className='card-price'>{pokemon.cardmarket.prices.lowPrice}</span>
         </div>
+        
+        <Link to ={`/detail/${pokemon.id}`}>Ir a detalle</Link>
         <button className="agregar-carrito add-to" id="${cardId}"><span className="prueba" id="${idPokeball}"></span>Adquirir</button>
     </div>
     );
