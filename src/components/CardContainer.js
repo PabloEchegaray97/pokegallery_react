@@ -2,12 +2,12 @@ import pokemon from 'pokemontcgsdk'
 import {useEffect,useState} from 'react';
 import Card from './Card';
 import './CardContainer.css';
-import Filters from '../components/Filters';
+import Filters from './Filters';
 pokemon.configure({
     apiKey: '0a62f8bc-55ae-4e7f-86fe-49da8aaf6ca9'
 })
 
-const CardContainer = () => {
+const CardContainer = ({handleAddProduct}) => {
     const [data, setData] = useState([]);
     const [pagina, setPagina] = useState(1);
     const [loading, setLoading] = useState(true);
@@ -18,7 +18,7 @@ const CardContainer = () => {
             
             pokemon.card.where({
                 page: pagina,
-                pageSize: 20
+                pageSize: 3
             })
                 .then((result) => result.data) 
                 .then((data) => {setData(data)})
@@ -28,7 +28,7 @@ const CardContainer = () => {
             pokemon.card.where({
                 q: `rarity:${filter}`,
                 page: pagina,
-                pageSize: 20  
+                pageSize: 3  
             })
                 .then((result) => result.data) 
                 .then((data) => {setData(data)})
@@ -57,7 +57,7 @@ const CardContainer = () => {
                     <Filters filter={filter} setFilter={setFilter}></Filters>
                     <div className='card-container'>
                         {data.map((pokemon) => (
-                            <Card key = {pokemon.id} pokemon={pokemon}></Card>
+                            <Card key = {pokemon.id} pokemon={pokemon} ></Card>
                         ))}
                     </div>
                     </>

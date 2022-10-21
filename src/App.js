@@ -7,11 +7,17 @@ import Home from './routes/Home';
 import Detail from './routes/Detail';
 import CardContainer from './components/CardContainer';
 import DetailContainer from './routes/DetailContainer';
+import Cart from './routes/Cart'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 pokemon.configure({apiKey: '0a62f8bc-55ae-4e7f-86fe-49da8aaf6ca9'})
 
 function App() {
-  
+  const [cart, setCart] = useState([]);
+
+  const addProductToCart = (product) => {
+    setCart(...cart, product);
+    console.log(cart)
+  }
 return (
 
   <div className="App">
@@ -23,6 +29,7 @@ return (
       <Route exact path="/detail" element = {<Detail/>}/>
       <Route exact path="/detail/:id" element = {<DetailContainer/>}/>
       <Route exact path="/cards" element = {<CardContainer/>}/>
+      <Route exact path="/Cart" element = {<Cart/>}/>
     </Routes>
   
     

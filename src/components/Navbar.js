@@ -10,6 +10,9 @@ const Navbar = ({pokemon}) => {
                 <li>
                     <Link to ={"/cards"}>Productos</Link>
                 </li>
+                <li>
+                    <Link to ={"/Cart"}>Carrito</Link>
+                </li>
             </ul>
         </div>
     )
