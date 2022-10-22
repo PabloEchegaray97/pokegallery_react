@@ -10,12 +10,13 @@ const CartProvider = ({ children }) => {
     }
 
     const deleteProduct = (id) => {
-       
+
         const newCart = cart.filter((item) => item.id !== id)
         console.log(newCart)
         setCart(newCart)
-        
     }
+
+    
 
     const addProductToCart = (product, quantity) => {
         console.log(product);
