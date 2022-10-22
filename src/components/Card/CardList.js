@@ -1,18 +1,18 @@
 import pokemon from 'pokemontcgsdk'
 import {useEffect,useState} from 'react';
 import Card from './Card';
-import './CardContainer.css';
-import Filters from './Filters';
+import './CardList.css';
+import Filters from '../Filters';
 pokemon.configure({
     apiKey: '0a62f8bc-55ae-4e7f-86fe-49da8aaf6ca9'
 })
 
-const CardContainer = ({handleAddProduct}) => {
+const CardList = ({handleAddProduct}) => {
     const [data, setData] = useState([]);
     const [pagina, setPagina] = useState(1);
     const [loading, setLoading] = useState(true);
     const [filter, setFilter] = useState(undefined);
-
+    
     useEffect(() => {
         if (!filter) {
             
@@ -80,4 +80,4 @@ const CardContainer = ({handleAddProduct}) => {
     )
 }
 
-export default CardContainer;
+export default CardList;

@@ -5,9 +5,10 @@ import {useEffect, useState} from 'react';
 import Navbar from './components/Navbar';
 import Home from './routes/Home';
 import Detail from './routes/Detail';
-import CardContainer from './components/CardContainer';
+import CardContainer from './components/Card/CardList';
 import DetailContainer from './routes/DetailContainer';
 import Cart from './routes/Cart'
+import { CartProvider } from './context/CartContext';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 pokemon.configure({apiKey: '0a62f8bc-55ae-4e7f-86fe-49da8aaf6ca9'})
 
@@ -21,7 +22,11 @@ function App() {
 return (
 
   <div className="App">
+
     <BrowserRouter>
+
+    <CartProvider>
+
     <Navbar pokemon={pokemon}></Navbar>
     <Routes>
 
@@ -33,6 +38,8 @@ return (
     </Routes>
   
     
+    </CartProvider>
+
     </BrowserRouter>
   </div>
 );
