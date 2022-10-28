@@ -4,7 +4,7 @@ const Cart = () => {
     const {cart} = useContext (CartContext); 
     const {deleteAllProducts} = useContext (CartContext);
     const {deleteProduct} = useContext (CartContext);
-    const {modifyQuantity} = useContext (CartContext);
+
 
     const [count, setCount] = useState (0);
 
@@ -13,11 +13,13 @@ const Cart = () => {
     const addQuantity = (product) => {
         if (product.quantity>=1) {
             setCount(product.quantity++);
+            console.log("la cantidad del producto es:" + product.quantity);
         }
     }
     const reduceQuantity = (product) => {
         if (product.quantity>1) {
             setCount(product.quantity--);
+          
         }
     }
     return(

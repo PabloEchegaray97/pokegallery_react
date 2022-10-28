@@ -1,6 +1,6 @@
 .card {
     max-height: 30.2rem;
-    max-width: 14rem;
+    width: 10rem;
     display: flex;
     flex-direction: column;
     background-color: white;

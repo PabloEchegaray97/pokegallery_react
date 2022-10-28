@@ -10,6 +10,7 @@ import DetailContainer from './routes/DetailContainer';
 import Cart from './routes/Cart'
 import { CartProvider } from './context/CartContext';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import 'boxicons'
 pokemon.configure({apiKey: '0a62f8bc-55ae-4e7f-86fe-49da8aaf6ca9'})
 
 function App() {
@@ -36,7 +37,6 @@ return (
       <Route exact path="/cards" element = {<CardContainer/>}/>
       <Route exact path="/Cart" element = {<Cart/>}/>
     </Routes>
-  
     
     </CartProvider>
 

@@ -1,0 +1,19 @@
+.header {
+    background-color: white;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    height: 4.4rem;
+    align-items: center;
+}
+.nav-link-container {
+    list-style-type: none;
+    display: flex;
+    
+}
+.nav-link a {
+    text-decoration: none;
+    padding-right: 1rem;
+    font-size: 1.1rem;
+}

@@ -34,7 +34,7 @@ const Card = ({pokemon}) => {
     }
 
     return(
-    <div>
+    
     <div className='card'>
         <div className ="card-img-container">
         <img  className="card-img" src={pokemon.images.small} />
@@ -49,11 +49,8 @@ const Card = ({pokemon}) => {
         <button className="agregar-carrito add-to" id="${cardId}" onClick={buttonClickHandler} ><span className="prueba" id="${idPokeball}"></span>Adquirir</button>
         
     </div>
-    <div>
-        Tests:
-       
-    </div>
-    </div>
+    
+    
     );
 
 }

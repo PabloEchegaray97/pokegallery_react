@@ -16,7 +16,6 @@ const CartProvider = ({ children }) => {
         setCart(newCart)
     }
 
-    
 
     const addProductToCart = (product, quantity) => {
         console.log(product);
