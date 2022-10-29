@@ -22,7 +22,7 @@ const CardList = () => {
             
             pokemon.card.where({
                 page: pagina,
-                pageSize: 3
+                pageSize: 30
             })
                 .then((result) => result.data) 
                 .then((data) => {setData(data)})
@@ -32,7 +32,7 @@ const CardList = () => {
             pokemon.card.where({
                 q: `rarity:${filter}`,
                 page: pagina,
-                pageSize: 3  
+                pageSize: 30  
             })
                 .then((result) => result.data) 
                 .then((data) => {setData(data)})
@@ -54,8 +54,8 @@ const CardList = () => {
         <>
             <Banner></Banner>
         <div className='container-products'>
-            <div className='app'>
                 <Filters filter={filter} setFilter={setFilter}></Filters>
+            <div className='app'>
                 {loading ? ( //data.length === 0
                     <h3>Cargando...</h3>
                     ) : (
@@ -69,14 +69,14 @@ const CardList = () => {
                 )}
             </div>
 
-            <div>
+            <div className='w-100 d-flex justify-content-center'>
                 {pagina == 1 ? ('') : (
-                    <button className="btn" onClick={() => buttonClickHandler("prev")} >
-                        atras
+                    <button className="btn p-2 m-2" onClick={() => buttonClickHandler("prev")} >
+                        Atras
                     </button>
                 )}
-                <button className="btn" onClick={() => buttonClickHandler("next")}>
-                    siguiente
+                <button className="btn btn-danger p-2 m-2" onClick={() => buttonClickHandler("next")}>
+                    Siguiente
                 </button>
             </div>
 

@@ -1,5 +1,6 @@
 import { CartContext } from "../context/CartContext";
 import {useContext, useEffect, useState} from 'react';
+import img from '../img/img'
 const Cart = () => {
     const {cart} = useContext (CartContext); 
     const {deleteAllProducts} = useContext (CartContext);
@@ -22,20 +23,22 @@ const Cart = () => {
           
         }
     }
+    /*
+    <tr key={product.id}>
+    <td>
+    <a href="" class="borrar-producto" id="${product.id}">x</a>
+    </td>
+    <td>{product.title}</td>
+    <td>{product.quantity}</td>
+    <td>${product.price}</td>
+    </tr>
+    
+    
+    */
     return(
         <>
-        <div className="margin-top-cart">
-            <div>
-                {cart.map((product)=> 
-                <div key={product.id}>
-                    {product.name} cantidad: {`${product.quantity}`}<div><button onClick={()=>reduceQuantity(product)}>-</button><button onClick={()=>addQuantity(product)}>+</button></div><button onClick={()=>deleteProduct(product.id)}>Quitar</button>
-                </div> )}
-            </div>
-            
-            <button onClick={deleteAllProducts}>Vaciar carrito</button>
-            
-        </div>
-        <section class="modal">
+        
+        <section className="mt-10 d-flex justify-content-center">
         <div class="modal__container">
             <div class="container cart-container" id="carrito-container">
                 <div id="carrito" class="carrito">
@@ -49,9 +52,16 @@ const Cart = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row"></th>
-                            </tr>
+                            
+                            {cart.map((product)=> 
+                <tr key={product.id}>
+                <td>
+                <button className="borrar-producto btn" onClick={()=> deleteProduct(product.id)}>x</button>
+                </td>
+                <td>{product.name}</td>
+                <td>{product.quantity}<button onClick={()=>reduceQuantity(product)} className='btn'>-</button><button onClick={()=>addQuantity(product)} className='btn'>+</button></td>
+                <td>${product.price}</td>
+                </tr> )}
                         </tbody>
                         <tr>
                             <th>Total</th>
@@ -61,17 +71,16 @@ const Cart = () => {
                         </tr>
                     </table>
                     <div class="cart-buttons">
-                        <button type="button" class="modal__button modal__button--mod" id="vaciar-carrito">Vaciar
+                        <button type="button" class="modal__button modal__button--mod" id="vaciar-carrito" onClick={deleteAllProducts}>Vaciar
                             Carrito</button>
-                        <button type="button" class="modal__button" id="confirmar-compra">Ir al carrito</button>
+                        <button type="button" class="modal__button" id="confirmar-compra" onClick={deleteAllProducts}>Comprar</button>
                     </div>
                 </div>
                 <div class="cart-status">
-
-                    <img src="../assets/img/pokeball_static.png" alt="" id="modal-gif" class="modal__gif"/>
+                    <img src={img.pokeball_gif} alt="" id="modal-gif" class="modal__gif"/>
                     <p class="modal__text" id="estado-carrito">¡Ya casi los tienes!</p>
                 </div>
-                <a href="#" class="modal__close">X</a>
+                
             </div>
         </div>
     </section>

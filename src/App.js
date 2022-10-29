@@ -12,6 +12,8 @@ import Footer from './components/Footer'
 import { CartProvider } from './context/CartContext';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import 'boxicons'
+import * as bootstrap from 'bootstrap'
+
 pokemon.configure({apiKey: '0a62f8bc-55ae-4e7f-86fe-49da8aaf6ca9'})
 
 const nav = window.addEventListener("scroll", function () {

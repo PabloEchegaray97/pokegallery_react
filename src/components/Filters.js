@@ -1,8 +1,10 @@
 
 
 const Filters = ({filter, setFilter}) => {
-    function clickHandler (param) {
-        setFilter(param);
+
+    const selectedValue = (e) => {
+        console.log(e.target.value);
+        setFilter(e.target.value)
     }
     return (
         <>
@@ -10,9 +12,16 @@ const Filters = ({filter, setFilter}) => {
             <h4 class="title">¡Encuentra tus cartas favoritas!</h4>
             <h4 class="title title-bold title-bold-mod">Buscar por categoria</h4>
             <div class="select-group"></div>
-        <button onClick= {()=> clickHandler(undefined)}>none</button>
-        <button onClick= {()=> clickHandler("common")}>common</button>
-        <button onClick= {()=> clickHandler("rare")}>rare</button>
+        
+        <div class="select-group">
+                <select name="" id="myselect" class="form-select" onChange={selectedValue}>
+                    <option value="all">Todos</option>
+                    <option value="holo">Holo</option>
+                    <option value="rare">Rare</option>
+                    <option value="uncommon">Uncommon</option>
+                    <option value="common">Common</option>
+                </select>
+            </div>
         </div>
         </>
     )
