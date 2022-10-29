@@ -13,8 +13,14 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import 'boxicons'
 pokemon.configure({apiKey: '0a62f8bc-55ae-4e7f-86fe-49da8aaf6ca9'})
 
+const nav = window.addEventListener("scroll", function () {
+  const header = document.querySelector("header");
+  header.classList.toggle("sticky", window.scrollY > 0);
+})
 function App() {
+  
   const [cart, setCart] = useState([]);
+  
 
   const addProductToCart = (product) => {
     setCart(...cart, product);
