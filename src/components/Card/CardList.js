@@ -5,6 +5,7 @@ import '../../App.css';
 import img from '../../img/img'
 import Banner from '../Banner'
 import Filters from '../Filters';
+import Spinner from 'react-bootstrap/Spinner';
 
 
 pokemon.configure({
@@ -57,7 +58,16 @@ const CardList = () => {
                 <Filters filter={filter} setFilter={setFilter}></Filters>
             <div className='app'>
                 {loading ? ( //data.length === 0
-                    <h3>Cargando...</h3>
+                    <>
+                      <div className="loading-text">
+                      </div>
+                      <div className='loading-container'>
+
+                      Cargando... 
+                      <Spinner animation="grow" variant="danger" />
+                      </div>
+                    </>
+
                     ) : (
                     <>
                     

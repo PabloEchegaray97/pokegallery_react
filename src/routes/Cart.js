@@ -5,6 +5,7 @@ const Cart = () => {
     const {cart} = useContext (CartContext); 
     const {deleteAllProducts} = useContext (CartContext);
     const {deleteProduct} = useContext (CartContext);
+    const total = cart.reduce((acc, product)=> acc += product.price * product.quantity,0).toFixed(2);
 
 
     const [count, setCount] = useState (0);
@@ -62,13 +63,13 @@ const Cart = () => {
                 <td>{product.quantity}<button onClick={()=>reduceQuantity(product)} className='btn'>-</button><button onClick={()=>addQuantity(product)} className='btn'>+</button></td>
                 <td>${product.price}</td>
                 </tr> )}
-                        </tbody>
                         <tr>
                             <th>Total</th>
                             <th> </th>
                             <th> </th>
-                            <th class="total-carrito">123213</th>
+                            <th class="total-carrito">{total}</th>
                         </tr>
+                        </tbody>
                     </table>
                     <div class="cart-buttons">
                         <button type="button" class="modal__button modal__button--mod" id="vaciar-carrito" onClick={deleteAllProducts}>Vaciar

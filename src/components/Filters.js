@@ -15,7 +15,7 @@ const Filters = ({filter, setFilter}) => {
         
         <div class="select-group">
                 <select name="" id="myselect" class="form-select" onChange={selectedValue}>
-                    <option value="all">Todos</option>
+                    <option value="">Todos</option>
                     <option value="holo">Holo</option>
                     <option value="rare">Rare</option>
                     <option value="uncommon">Uncommon</option>
