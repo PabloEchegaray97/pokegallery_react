@@ -1,8 +1,12 @@
 import pokemon from 'pokemontcgsdk'
 import {useEffect,useState} from 'react';
 import Card from './Card';
-import './CardList.css';
+import '../../App.css';
+import img from '../../img/img'
+import Banner from '../Banner'
 import Filters from '../Filters';
+
+
 pokemon.configure({
     apiKey: '0a62f8bc-55ae-4e7f-86fe-49da8aaf6ca9'
 })
@@ -47,18 +51,19 @@ const CardList = () => {
     };
     console.log(data.length)
     return (
-        <div >
-            <h1>PokeGallery</h1>
+        <>
+            <Banner></Banner>
+        <div className='container-products'>
+            <div className='app'>
                 <Filters filter={filter} setFilter={setFilter}></Filters>
-            <div className='card-container'>
                 {loading ? ( //data.length === 0
                     <h3>Cargando...</h3>
-                ) : (
+                    ) : (
                     <>
                     
                         {data.map((pokemon) => (
                             <Card key = {pokemon.id} pokemon={pokemon} ></Card>
-                        ))}
+                            ))}
                     
                     </>
                 )}
@@ -77,6 +82,7 @@ const CardList = () => {
 
 
         </div>
+                </>
     )
 }
 

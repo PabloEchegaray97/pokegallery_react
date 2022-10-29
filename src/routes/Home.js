@@ -1,5 +1,6 @@
 import img from '../img/img'
 import '../App.css'
+import Footer from '../components/Footer'
 const Home = () => {
     return (
         <>

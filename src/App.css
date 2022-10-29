@@ -678,7 +678,7 @@ p {
   background-color: #ffffff;
 }
 
-.modal {
+.modal-mod {
   position: fixed;
   top: 0;
   left: 0;
@@ -971,7 +971,7 @@ p {
 }
 
 .banner {
-  margin: 1rem 0;
+  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1121,4 +1121,7 @@ p {
   font-size: 1.2rem;
   font-weight: 700;
   color: #303030;
+}
+.margin-top-cart {
+  margin-top: 10rem;
 }

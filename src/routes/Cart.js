@@ -23,7 +23,8 @@ const Cart = () => {
         }
     }
     return(
-        <div>
+        <>
+        <div className="margin-top-cart">
             <div>
                 {cart.map((product)=> 
                 <div key={product.id}>
@@ -32,8 +33,51 @@ const Cart = () => {
             </div>
             
             <button onClick={deleteAllProducts}>Vaciar carrito</button>
-
+            
         </div>
+        <section class="modal">
+        <div class="modal__container">
+            <div class="container cart-container" id="carrito-container">
+                <div id="carrito" class="carrito">
+                    <table class="table" id="lista-carrito">
+                        <thead>
+                            <tr>
+                                <th>Eliminar</th>
+                                <th>Item</th>
+                                <th>Cantidad</th>
+                                <th>Precio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row"></th>
+                            </tr>
+                        </tbody>
+                        <tr>
+                            <th>Total</th>
+                            <th> </th>
+                            <th> </th>
+                            <th class="total-carrito">123213</th>
+                        </tr>
+                    </table>
+                    <div class="cart-buttons">
+                        <button type="button" class="modal__button modal__button--mod" id="vaciar-carrito">Vaciar
+                            Carrito</button>
+                        <button type="button" class="modal__button" id="confirmar-compra">Ir al carrito</button>
+                    </div>
+                </div>
+                <div class="cart-status">
+
+                    <img src="../assets/img/pokeball_static.png" alt="" id="modal-gif" class="modal__gif"/>
+                    <p class="modal__text" id="estado-carrito">¡Ya casi los tienes!</p>
+                </div>
+                <a href="#" class="modal__close">X</a>
+            </div>
+        </div>
+    </section>
+        </>
+    
+
 
     )
 }

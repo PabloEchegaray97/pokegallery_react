@@ -8,6 +8,7 @@ import Detail from './routes/Detail';
 import CardContainer from './components/Card/CardList';
 import DetailContainer from './routes/DetailContainer';
 import Cart from './routes/Cart'
+import Footer from './components/Footer'
 import { CartProvider } from './context/CartContext';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import 'boxicons'
@@ -28,7 +29,7 @@ function App() {
   }
 return (
 
-  <div className="App">
+  <>
 
     <BrowserRouter>
 
@@ -45,9 +46,9 @@ return (
     </Routes>
     
     </CartProvider>
-
+    <Footer/>
     </BrowserRouter>
-  </div>
+  </>
 );
 }
 
