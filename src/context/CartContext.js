@@ -4,7 +4,7 @@ const CartContext = React.createContext();
 
 const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
-
+    const cartLenght = cart.length;
     const deleteAllProducts = () => {
         setCart([]);
     }
@@ -44,7 +44,7 @@ const CartProvider = ({ children }) => {
     };
 
     return (
-        <CartContext.Provider value={{ cart, addProductToCart, deleteAllProducts, deleteProduct }}>
+        <CartContext.Provider value={{ cart, addProductToCart, deleteAllProducts, deleteProduct,cartLenght }}>
             {children}
         </CartContext.Provider>
     );

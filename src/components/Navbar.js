@@ -3,7 +3,10 @@ import pokemon from "pokemontcgsdk";
 import Logo from "./Logo";
 import '../App.css'
 import img from '../img/img'
+import { CartContext } from '../context/CartContext'
+import { useState, useContext } from 'react';
 const Navbar = ({ pokemon }) => {
+    const {cartLenght} = useContext(CartContext);
     return (
         <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-menu movil sticky-top">
@@ -25,7 +28,7 @@ const Navbar = ({ pokemon }) => {
                         <li class="cart-container-mod">
                           <Link to={"/Cart"} className=' carthero__cta'>
                             <img src={img.cart} alt="" class="cart-img"/>
-                            <span class="cart-total">0</span>
+                            <span class="cart-total">{cartLenght}</span>
                           </Link>
                         </li>
                     </ul>
