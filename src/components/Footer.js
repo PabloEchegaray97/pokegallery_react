@@ -2,7 +2,7 @@ import 'boxicons'
 import '../App.css'
 import '../img/img'
 import img from '../img/img'
-
+import { Link } from "react-router-dom";
 const Footer = () => {
     return (
         <footer className="footer">
@@ -23,19 +23,20 @@ const Footer = () => {
             <div className="footer-section">
                 <h5 className="footer-title">Productos</h5>
                 <ul className="list">
-                    <li className="list__item"><a href="#" >Cartas</a></li>
-                    <li className="list__item"><a href="#" >Juguetes</a></li>
-                    <li className="list__item"><a href="#" >Llaveros</a></li>
-                    <li className="list__item"><a href="#" >Accesorios</a></li>
-                    <li className="list__item"><a href="#" >Peluches</a></li>
+                    <li className="list__item"><div><Link to='/cards' className='link-footer'>Cartas</Link></div></li>
+                    <li className="list__item"><div>Juguetes</div></li>
+                    <li className="list__item"><div>Llaveros</div></li>
+                    <li className="list__item"><div>Accesorios</div></li>
+                    <li className="list__item"><div>Peluches</div></li>
                 </ul>
             </div>
             <div className="footer-section">
                 <h5 className="footer-title">Social</h5>
                 <div className="footer-links">
-                <box-icon name='linkedin-square' type='logo' color='#ffffff' size='lg' ></box-icon>
-                <box-icon name='github' type='logo' color='#ffffff' size='lg'></box-icon>
-                <box-icon name='instagram' type='logo' color='#ffffff' size='lg'></box-icon>
+                <i class='bx bx-mod bxl-linkedin-square'></i>
+                <i class='bx bx-mod bxl-github'></i>
+                <i class='bx bx-mod bxl-instagram-alt'></i>
+                
 
 
                 </div>

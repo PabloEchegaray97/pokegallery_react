@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import pokemon from "pokemontcgsdk";
+
 import Logo from "./Logo";
 import '../App.css'
 import img from '../img/img'
 import { CartContext } from '../context/CartContext'
-import { useState, useContext } from 'react';
-const Navbar = ({ pokemon }) => {
+import {useContext } from 'react';
+const Navbar = () => {
     const {cartLenght} = useContext(CartContext);
     return (
         <header>

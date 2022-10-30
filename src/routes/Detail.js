@@ -1,11 +1,11 @@
 import './detail.scss'
 import {CartContext} from '../context/CartContext';
-import { useContext, useEffect, useState } from 'react';
+import { useContext} from 'react';
 
 
 let quantity = 0;
 const Detail = ({pokemon}) => {
-    const {addProductToCart,cart,setCart} = useContext(CartContext);
+    const {addProductToCart} = useContext(CartContext);
     if (pokemon===undefined) {
         return <p>cargando...</p>
     }
@@ -34,7 +34,7 @@ const Detail = ({pokemon}) => {
     
     console.log(pokemon);
     return (
-        <> {/*fragment*/}
+        <>
         <div className='card'>
             
             <div>{pokemon.name}</div>

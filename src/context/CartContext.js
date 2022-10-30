@@ -5,6 +5,7 @@ const CartContext = React.createContext();
 const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
     const cartLenght = cart.length;
+    
     const deleteAllProducts = () => {
         setCart([]);
     }

@@ -1,6 +1,7 @@
 import { CartContext } from "../context/CartContext";
-import {useContext, useEffect, useState} from 'react';
+import {useContext, useState} from 'react';
 import img from '../img/img'
+import { Link } from "react-router-dom";
 const Cart = () => {
     const {cart} = useContext (CartContext); 
     const {deleteAllProducts} = useContext (CartContext);
@@ -24,18 +25,6 @@ const Cart = () => {
           
         }
     }
-    /*
-    <tr key={product.id}>
-    <td>
-    <a href="" class="borrar-producto" id="${product.id}">x</a>
-    </td>
-    <td>{product.title}</td>
-    <td>{product.quantity}</td>
-    <td>${product.price}</td>
-    </tr>
-    
-    
-    */
     return(
         <>
         
@@ -59,7 +48,7 @@ const Cart = () => {
                 <td>
                 <button className="borrar-producto btn" onClick={()=> deleteProduct(product.id)}>x</button>
                 </td>
-                <td>{product.name}</td>
+                <td><Link to={`/Detail/${product.id}`} className="btn">{product.name}</Link></td>
                 <td>{product.quantity}<button onClick={()=>reduceQuantity(product)} className='btn'>-</button><button onClick={()=>addQuantity(product)} className='btn'>+</button></td>
                 <td>${product.price}</td>
                 </tr> )}

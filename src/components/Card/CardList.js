@@ -1,11 +1,11 @@
 import pokemon from 'pokemontcgsdk'
 import {useEffect,useState} from 'react';
+
+import Spinner from 'react-bootstrap/Spinner';
 import Card from './Card';
 import '../../App.css';
-import img from '../../img/img'
 import Banner from '../Banner'
 import Filters from '../Filters';
-import Spinner from 'react-bootstrap/Spinner';
 
 
 pokemon.configure({
@@ -57,7 +57,7 @@ const CardList = () => {
         <div className='container-products'>
                 <Filters filter={filter} setFilter={setFilter}></Filters>
             <div className='app'>
-                {loading ? ( //data.length === 0
+                {loading ? (
                     <>
                       <div className="loading-text">
                       </div>

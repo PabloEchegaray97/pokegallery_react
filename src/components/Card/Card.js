@@ -1,23 +1,10 @@
 import '../../App.css';
 import { Link } from 'react-router-dom';
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 
 import { CartContext } from '../../context/CartContext'
 
 const Card = ({ pokemon }) => {
-
-    // const [product, setProduct]= useState([]);
-
-    // const addItem = (item) => {
-    //     console.log(item)
-    //     setProduct([...product, item]);
-    // }
-
-    // const buttonClickHandler = () => {
-    //     addItem(pokemon)
-    //     console.log("agregue:"+ pokemon.name);
-
-    // }
 
     const { addProductToCart } = useContext(CartContext);
 
@@ -36,45 +23,21 @@ const Card = ({ pokemon }) => {
     const classesRarity = `rarity ${pokemon.rarity}`
     return (
         
-
-        
-        <div class="card">
+        <div className="card">
                         <div className={classesImg}>
-                            <img class="img-item" src={pokemon.images.small} alt=""/>
+                            <img className="img-item" src={pokemon.images.small} alt=""/>
                         </div>
-                        <span class="card-name">{pokemon.name}</span>
-                        <div class={classesRarity}>
+                        <span className="card-name">{pokemon.name}</span>
+                        <div className={classesRarity}>
                             {pokemon.rarity}
                         </div>
-                        <div class="card-text">
-                            <span>$<span class="price-tag">${pokemon.cardmarket.prices.trendPrice}</span></span>
-                            <p class ="card-title">{pokemon.name}</p>
+                        <div className="card-text">
+                            <span>$<span className="price-tag">${pokemon.cardmarket.prices.trendPrice}</span></span>
+                            <p className ="card-title">{pokemon.name}</p>
                         </div>
-                        <button class="agregar-carrito add-to" id="${element.id}"><span class="prueba"></span>Adquirir</button>
-        </div>
-        
-        /*
-        <div class="card">
-                        <div class=["img", {pokemon.rarity}]>
-                            <img class="img-item" src={pokemon.images.small} alt="">
-                        </div>
-                        <span class="card-name">{pokemon.name}</span>
-                        <div class=["rarity",{pokemon.rarity}]>
-                            {pokemon.rarity}
-                        </div>
-                        <div class="card-text">
-                            <span>$<span class="price-tag">{pokemon.cardmarket.prices.trendPrice}</span></span>
-                            <p class ="card-title">{pokemon.name}</p>
-                        </div>
-                        <button class="agregar-carrito add-to" id="${element.id}"><span class="prueba" id="${idPokeball}"></span>Adquirir</button>
-        </div>
-        
-        
-        
-        */
-        
-        
-        
+                            <Link to= {`/Detail/${pokemon.id}`}>Ir a detalle</Link>
+                        <button className="agregar-carrito add-to" id="${element.id}" onClick={buttonClickHandler}><span className="prueba"></span>Adquirir</button>
+        </div>    
     );
 
 }

@@ -1,7 +1,7 @@
-import logo from './logo.svg';
+
 import './App.css';
 import pokemon from 'pokemontcgsdk'
-import {useEffect, useState} from 'react';
+import {useState} from 'react';
 import Navbar from './components/Navbar';
 import Home from './routes/Home';
 import Detail from './routes/Detail';
@@ -21,14 +21,6 @@ const nav = window.addEventListener("scroll", function () {
   header.classList.toggle("sticky", window.scrollY > 0);
 })
 function App() {
-  
-  const [cart, setCart] = useState([]);
-  
-
-  const addProductToCart = (product) => {
-    setCart(...cart, product);
-    console.log(cart)
-  }
 return (
 
   <>
@@ -37,7 +29,7 @@ return (
 
     <CartProvider>
 
-    <Navbar pokemon={pokemon}></Navbar>
+    <Navbar></Navbar>
     <Routes>
 
       <Route exact path="/" element = {<Home/>}/>

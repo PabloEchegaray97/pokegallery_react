@@ -898,12 +898,13 @@ p {
   display: flex;
   align-items: center;
 }
-.list .list__item a {
+.list .list__item div {
   color: #ffffff;
 }
-.list .list__item a:hover {
+.list .list__item div:hover {
   color: #ea2b2b;
   transition: 0.5s;
+  cursor: pointer;
 }
 @media screen and (max-width: 600px) {
   .list .list__item {
@@ -1138,4 +1139,13 @@ p {
 
   flex-direction: column;
   align-items: center;
+}
+
+.link-footer {
+  color:white;
+  text-decoration: none;
+  transition: .3s;
+}
+.link-footer:hover {
+  color: #ea2b2b;
 }
