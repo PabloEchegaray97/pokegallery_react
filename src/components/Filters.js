@@ -3,7 +3,6 @@
 const Filters = ({filter, setFilter}) => {
 
     const selectedValue = (e) => {
-        console.log(e.target.value);
         setFilter(e.target.value)
     }
     return (
@@ -13,7 +12,7 @@ const Filters = ({filter, setFilter}) => {
             <h4 className="title title-bold title-bold-mod">Buscar por categoria</h4>
             <div className="select-group"></div>
         
-        <div class="select-group">
+        <div className="select-group">
                 <select name="" id="myselect" className="form-select" onChange={selectedValue}>
                     <option value="">Todos</option>
                     <option value="holo">Holo</option>

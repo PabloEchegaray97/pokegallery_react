@@ -33,9 +33,9 @@ const Footer = () => {
             <div className="footer-section">
                 <h5 className="footer-title">Social</h5>
                 <div className="footer-links">
-                <i class='bx bx-mod bxl-linkedin-square'></i>
-                <i class='bx bx-mod bxl-github'></i>
-                <i class='bx bx-mod bxl-instagram-alt'></i>
+                <i className='bx bx-mod bxl-linkedin-square'></i>
+                <i className='bx bx-mod bxl-github'></i>
+                <i className='bx bx-mod bxl-instagram-alt'></i>
                 
 
 

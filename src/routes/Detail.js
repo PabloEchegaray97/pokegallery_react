@@ -18,21 +18,19 @@ const Detail = ({pokemon}) => {
     const buttonClickHandler = () => {
         if (quantity == 0 || quantity == 'Cantidad') {
         console.log("no hay cantidad seleccionada")
-            console.log(pokemon.quantity)
             alert("Debes seleccionar una cantidad para poder añadir el articulo al carrito")
         } else {
-            console.log(pokemon)
+            
             addProductToCart(
                 {
                     id: pokemon.id,
                     name:pokemon.name,
                     price: pokemon.cardmarket.prices.averageSellPrice,
-                   
+
                 },parseInt(quantity))
         }
     }
     
-    console.log(pokemon);
     return (
         <>
         <div className='card'>

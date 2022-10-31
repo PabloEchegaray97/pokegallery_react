@@ -50,7 +50,6 @@ const CardList = () => {
             setPagina(pagina + 1)
         }
     };
-    console.log(data.length)
     return (
         <>
             <Banner></Banner>
@@ -59,13 +58,13 @@ const CardList = () => {
             <div className='app'>
                 {loading ? (
                     <>
-                      <div className="loading-text">
-                      </div>
-                      <div className='loading-container'>
+                    <div className="loading-text">
+                    </div>
+                    <div className='loading-container'>
 
-                      Cargando... 
-                      <Spinner animation="grow" variant="danger" />
-                      </div>
+                    Cargando... 
+                    <Spinner animation="grow" variant="danger" />
+                    </div>
                     </>
 
                     ) : (

@@ -19,7 +19,7 @@ const Home = () => {
             <div className="banner">
                 <img src={img.banner_silver_tempest} alt="" className="banner-img" />
                 <h4 className="title">¡Descubre los ultimos lanzamientos!</h4>
-                <Link to={`/cards`}><button class="banner-btn">VER CARTAS</button></Link>
+                <Link to={`/cards`}><button className="banner-btn">VER CARTAS</button></Link>
             </div>
             <div className="banner banner-2">
                 <img src={img.banner_pin_snorlax} alt="" className="banner-img" />

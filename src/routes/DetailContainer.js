@@ -12,7 +12,7 @@ const DetailContainer = () => {
 
   useEffect(() => {
     pokemon.card.find(id).then((card) => {
-      console.log(card.name); // "Charizard"
+      console.log(card.name);
       setPokemon(card);
     });
   }, [id]);

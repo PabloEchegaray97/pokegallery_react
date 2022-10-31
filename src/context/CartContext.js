@@ -13,19 +13,16 @@ const CartProvider = ({ children }) => {
     const deleteProduct = (id) => {
 
         const newCart = cart.filter((item) => item.id !== id)
-        console.log(newCart)
         setCart(newCart)
     }
 
 
     const addProductToCart = (product, quantity) => {
-        console.log(product);
-        console.log(quantity);
         const productIndex = cart.findIndex(
             (cartProduct) => cartProduct.id === product.id
         );
         if (productIndex > -1) {
-            //Si el producto ya está en el carro
+
             setCart((cart) =>
                 cart.map((cartProduct) => {
                     if (cartProduct.id === product.id) {
@@ -38,7 +35,7 @@ const CartProvider = ({ children }) => {
                 })
             );
         } else {
-            //El producto no esta en el carro
+
             product.quantity = quantity;
             setCart([...cart, product]);
         }

@@ -9,26 +9,26 @@ const Navbar = () => {
     const {cartLenght} = useContext(CartContext);
     return (
         <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-menu movil sticky-top">
-            <div class="container-fluid">
+            <nav className="navbar navbar-expand-lg navbar-light bg-menu movil sticky-top">
+            <div className="container-fluid">
               <Link to={"/"}>
                     <Logo />
                 </Link>
-                <button class="navbar-toggler border-nav bg-button" type="button" data-bs-toggle="collapse"
+                <button className="navbar-toggler border-nav bg-button" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                     aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span className="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                    <ul class="navbar-nav align-items-center bg-nav">
-                        <li class="nav-item">
+                <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul className="navbar-nav align-items-center bg-nav">
+                        <li className="nav-item">
                             <Link to={"/cards"} className=' nav-link font-mod'>Productos</Link>
                         </li>
                         
-                        <li class="cart-container-mod">
+                        <li className="cart-container-mod">
                           <Link to={"/Cart"} className=' carthero__cta'>
-                            <img src={img.cart} alt="" class="cart-img"/>
-                            <span class="cart-total">{cartLenght}</span>
+                            <img src={img.cart} alt="" className="cart-img"/>
+                            <span className="cart-total">{cartLenght}</span>
                           </Link>
                         </li>
                     </ul>
@@ -36,40 +36,7 @@ const Navbar = () => {
             </div>
         </nav>
         </header>
-        /*
-        <nav class="navbar navbar-expand-lg navbar-light bg-menu movil sticky-top">
-            <div class="container-fluid">
-              <Link to={"/"}>
-                    <Logo />
-                </Link>
-                <button class="navbar-toggler border-nav bg-button" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                    <ul class="navbar-nav align-items-center bg-nav">
-                        <li class="nav-item">
-                            <Link to={"/cards"} className=' nav-link font-mod'>Productos</Link>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link font-mod" href="#">Accesorios</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link font-mod" href="#">Contacto</a>
-                        </li>
-                        <li class="cart-container-mod">
-                          <Link to={"/Cart"} className=' carthero__cta'>
-                            <img src={img.cart} alt="" class="cart-img">
-                            <span class="cart-total">0</span>
-                          </Link>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
         
-        */
     );
 };
 export default Navbar;
