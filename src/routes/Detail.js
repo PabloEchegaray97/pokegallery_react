@@ -39,7 +39,7 @@ const Detail = ({pokemon}) => {
             
             <h3 className='card-detail-title'>{pokemon.name}</h3>
             <div className={classesImg}>
-            <img src ={pokemon.images?.large} className='card-img card-img-mod img-item' />
+            <img src ={pokemon.images?.small} className='card-img card-img-mod img-item' />
             </div>
             <div>
 
