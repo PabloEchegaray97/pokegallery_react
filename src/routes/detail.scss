@@ -1,4 +1,22 @@
-.card {
-    height: 20rem;
-    width: 10rem;
+
+.detail-container {
+    height: calc(100vh);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-detail {
+    width: 25rem;
+    margin: 4rem;
+}
+  .card-img-mod {
+    width: 25rem;
+  }
+.add-to {
+    width: 100%;
+    padding: 1rem;
+}
+.card-detail-title {
+    text-align: center;
 }

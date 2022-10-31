@@ -232,6 +232,8 @@ header ul li {
   border-bottom: 1px solid rgb(148, 148, 148);
   overflow: hidden;
   height: 100%;
+  border-radius: .5rem;
+  
 }
 .card .img-item {
   width: 100%;
@@ -418,6 +420,7 @@ p {
   background-repeat: no-repeat;
   background-position: 50% 50%;
   transform-origin: center;
+  border-radius: 2rem;
 }
 
 .Holo:hover {
@@ -696,17 +699,17 @@ p {
 }
 
 .modal__container {
-  z-index: 10;
+
   width: 60%;
   max-width: 600px;
-  height: 40em;
+  min-height: 40rem;
   background-color: #fff;
   -webkit-border-bottom-left-radius: 10px;
   -moz-border-radius-bottomleft: 10px;
   border-bottom-left-radius: 10px;
   transform: var(--transform);
   transition: var(--transition);
-  overflow: auto;
+
 }
 @media screen and (max-width: 600px) {
   .modal__container {
@@ -1148,4 +1151,7 @@ p {
 }
 .link-footer:hover {
   color: #ea2b2b;
+}
+.card-detail {
+  width: 100rem;
 }

@@ -27,7 +27,7 @@ const Cart = () => {
     return(
         <>
         
-        <section className="mt-10 d-flex justify-content-center">
+        <section className="d-flex justify-content-center">
         <div className="modal__container">
             <div className="container cart-container" id="carrito-container">
                 <div id="carrito" className="carrito">

@@ -12,7 +12,6 @@ const DetailContainer = () => {
 
   useEffect(() => {
     pokemon.card.find(id).then((card) => {
-      console.log(card.name);
       setPokemon(card);
     });
   }, [id]);
@@ -20,10 +19,9 @@ const DetailContainer = () => {
     return(<p>Cargando...</p>)
   }
   return(
-    <>
-    <Detail pokemon={pokemonData}></Detail>
-    
-    </>
+    <div className='detail-container'>
+    <Detail pokemon={pokemonData} ></Detail>
+    </div>
   )
 };
 
