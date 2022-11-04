@@ -14,17 +14,21 @@ const ItemList = () => {
         });
     },[])
     console.log(products)
-
-
     return (
-    <>
-        <div>ItemList</div>
-        {products.map(product => (
+    <div className='app'>
+        {!products ? (
+            <div>Cargando...</div>
+            )  : (
+                
+                <>
+                {products.map(product => (
+                    <Item item={product} key={product.id}></Item>
+                    ))}
+                </>
             
-            <Item item={product} key={product.id}></Item>
-            
-        ))}
-    </>)
+        )}
+        
+    </div>)
 }
 
 export default ItemList;

@@ -1155,3 +1155,9 @@ p {
 .card-detail {
   width: 100rem;
 }
+.item-detail {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
