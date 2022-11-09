@@ -63,14 +63,14 @@ const Cart = () => {
                     <div className="cart-buttons">
                         <button type="button" className="modal__button modal__button--mod" id="vaciar-carrito" onClick={deleteAllProducts}>Vaciar
                             Carrito</button>
-                        <button type="button" className="modal__button" id="confirmar-compra" onClick={deleteAllProducts}>Comprar</button>
+                        <Link to={'/Checkout'} className='modal__button' >Comprar</Link>
                     </div>
                 </div>
                 <div className="cart-status">
                     <img src={img.pokeball_gif} alt="" id="modal-gif" className="modal__gif"/>
                     <p className="modal__text" id="estado-carrito">¡Ya casi los tienes!</p>
                 </div>
-                <ContactForm/>
+                
             </div>
         </div>
     </section>

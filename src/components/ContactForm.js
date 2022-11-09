@@ -1,12 +1,12 @@
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import { CartContext } from "../context/CartContext";
-import {useContext, useState} from 'react';
+import { useContext, useState } from 'react';
 
 
 const ContactForm = () => {
-    const {cart} = useContext (CartContext); 
+    const { cart } = useContext(CartContext);
     const defaultForm = { name: '', email: '', message: '', cart: cart };
-
+    const total = cart.reduce((acc, product)=> acc += product.price * product.quantity,0).toFixed(2);
     console.log(cart)
 
 
@@ -32,33 +32,39 @@ const ContactForm = () => {
     };
 
     return (
-        <div>
+        <>
             {id ? (
                 <>
-                <div>
-                    Gracias por enviar el mensaje, se ha guardado con id {id}
-                </div>
-                <div>
-                    <button onClick={resetHandler}>Enviar otro mensaje</button>
-                </div>
+                    <div>
+                        Gracias por enviar el mensaje, se ha guardado con id {id}
+                    </div>
+                    <div>
+                        <button onClick={resetHandler}>Enviar otro mensaje</button>
+                    </div>
                 </>
             ) : (
-                <form onSubmit={submitHandler}>
-                    
+                <form onSubmit={submitHandler} className='form-container'>
+
                     <div>
-                    <div>Items en el carrito</div>
-                <>
-                        {cart.map((pokemon) => (
-                            <div> {pokemon.name} x {pokemon.quantity}</div>
+                        <p className='form-title fw-bold'>¡Ingresa tus datos a continuacion para finalizar tu compra!</p>
+                        <div className='fw-bold'>Tu pedido:</div>
+                        <>
+                            {cart.map((pokemon) => (
+                                <div> {pokemon.name} x {pokemon.quantity} - ${pokemon.price}</div>
                             ))}
-                </>
-                        <label htmlFor="name">Nombre</label>
-                        <input
-                            name="name"
-                            id="name"
-                            value={form.name}
-                            onChange={changeHandler}
-                        />
+                        </>
+                        <div className='mb-2 mt-2 fw-bold'>Total: ${total}</div>
+                        <div className='form-input'>
+                            <label htmlFor="name">Nombre</label>
+                            <input
+                                name="name"
+                                id="name"
+                                value={form.name}
+                                onChange={changeHandler}
+                                className="form-control"
+                            />
+                        </div>
+
                     </div>
                     <div>
                         <label htmlFor="email">Email</label>
@@ -68,6 +74,7 @@ const ContactForm = () => {
                             id="email"
                             value={form.email}
                             onChange={changeHandler}
+                            className="form-control"
                         />
                     </div>
                     <div>
@@ -77,12 +84,15 @@ const ContactForm = () => {
                             id="message"
                             value={form.message}
                             onChange={changeHandler}
+                            className="form-control"
                         ></textarea>
                     </div>
-                    <button>Enviar</button>
+                    <div className='btn-form-container'>
+                    <button className='btn btn-danger btn-form'>Enviar</button>
+                    </div>
                 </form>
             )}
-        </div>
+        </>
     );
 };
 

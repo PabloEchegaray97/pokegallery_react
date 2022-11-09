@@ -2,6 +2,8 @@ import {useEffect, useState} from 'react'
 import {getFirestore, collection, getDocs} from 'firebase/firestore'
 import ItemList from './ItemList'
 
+import Spinner from 'react-bootstrap/Spinner';
+
 const ItemListContainer = () => {
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
@@ -20,10 +22,16 @@ const ItemListContainer = () => {
         ;
     },[])
     console.log(products)
+    console.log(loading)
     return (
-    <div className='app'>
+    <div className='container-products'>
         {loading ? (
-            <div>Cargando...</div>
+            <>
+            <div className='loading-container'>
+            Cargando... 
+            <Spinner animation="grow" variant="danger" />
+            </div>
+            </>
             )  : (
                 
                 <>

@@ -53,10 +53,8 @@ const CardList = () => {
     };
     return (
         <>
-        
-            <Banner></Banner>
         <div className='container-products'>
-            <ItemListContainer></ItemListContainer>
+           
                 <Filters filter={filter} setFilter={setFilter}></Filters>
             <div className='app'>
                 {loading ? (

@@ -209,7 +209,7 @@ header ul li {
 }
 
 .container-products {
-  margin: 0 18rem;
+  margin: 0 5rem;
 }
 @media screen and (max-width: 1024px) {
   .container-products {
@@ -734,6 +734,11 @@ p {
   padding: 0.6rem;
   border-radius: 0.3rem;
   border: none;
+  text-decoration: none;
+  
+}
+.modal__button:hover {
+  color: white;
 }
 
 .modal__button--mod {
@@ -1160,4 +1165,30 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.contact-form {
+  height: calc(100vh - 56px);
+  margin-top: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+.form-container {
+  width: 60%;
+}
+.btn-form-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+textarea {
+  resize: none!important;
+  height: 10rem;
+}
+.form-title {
+  font-size: 2rem;
+  margin: 0;
+  text-align: center;
 }

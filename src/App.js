@@ -1,23 +1,24 @@
 
-import './App.css';
+import './App.css'
 import pokemon from 'pokemontcgsdk'
-import {useState} from 'react';
-import Navbar from './components/Navbar';
-import Home from './routes/Home';
-import Detail from './routes/Detail';
-import CardContainer from './components/Card/CardList';
-import DetailContainer from './routes/DetailContainer';
+import {useState} from 'react'
+import Navbar from './components/Navbar'
+import Home from './routes/Home'
+import Detail from './routes/Detail'
 
-import ItemDetailContainer from './routes/ItemDetailContainer';
+import DetailContainer from './routes/DetailContainer'
+import ItemDetailContainer from './routes/ItemDetailContainer'
 
 import ContactForm from './components/ContactForm'
+import CartDetail from './routes/CartDetail'
 
 import Cart from './routes/Cart'
 import Footer from './components/Footer'
-import { CartProvider } from './context/CartContext';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { CartProvider } from './context/CartContext'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import 'boxicons'
 import * as bootstrap from 'bootstrap'
+import ProductsContainer from './routes/ProductsContainer'
 
 
 pokemon.configure({apiKey: '0a62f8bc-55ae-4e7f-86fe-49da8aaf6ca9'})
@@ -42,10 +43,10 @@ return (
       <Route exact path="/detail" element = {<Detail/>}/>
       <Route exact path="/detail/:id" element = {<DetailContainer/>}/>
       <Route exact path="/TCG-cards/:id" element = {<ItemDetailContainer/>}/>
-      <Route exact path="/cards" element = {<CardContainer/>}/>
+      <Route exact path="/Products" element = {<ProductsContainer/>}/>
       <Route exact path="/Cart" element = {<Cart/>}/>
-      <Route exact path="/Checkout" element = {<ContactForm/>}/>;
-      
+      <Route exact path="/Checkout" element = {<CartDetail/>}/>;
+
     </Routes>
     
     </CartProvider>

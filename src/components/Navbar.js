@@ -22,7 +22,7 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul className="navbar-nav align-items-center bg-nav">
                         <li className="nav-item">
-                            <Link to={"/cards"} className=' nav-link font-mod'>Productos</Link>
+                            <Link to={"/Products"} className=' nav-link font-mod'>Productos</Link>
                         </li>
                         
                         <li className="cart-container-mod">
