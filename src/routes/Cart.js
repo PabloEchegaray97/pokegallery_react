@@ -2,6 +2,7 @@ import { CartContext } from "../context/CartContext";
 import {useContext, useState} from 'react';
 import img from '../img/img'
 import { Link } from "react-router-dom";
+import ContactForm from "../components/ContactForm";
 const Cart = () => {
     const {cart} = useContext (CartContext); 
     const {deleteAllProducts} = useContext (CartContext);
@@ -69,7 +70,7 @@ const Cart = () => {
                     <img src={img.pokeball_gif} alt="" id="modal-gif" className="modal__gif"/>
                     <p className="modal__text" id="estado-carrito">¡Ya casi los tienes!</p>
                 </div>
-                
+                <ContactForm/>
             </div>
         </div>
     </section>

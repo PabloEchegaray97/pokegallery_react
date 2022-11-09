@@ -6,7 +6,7 @@ import Card from './Card';
 import '../../App.css';
 import Banner from '../Banner'
 import Filters from '../Filters';
-import ItemList from './ItemList';
+import ItemListContainer from './ItemListContainer';
 
 
 pokemon.configure({
@@ -56,7 +56,7 @@ const CardList = () => {
         
             <Banner></Banner>
         <div className='container-products'>
-            <ItemList></ItemList>
+            <ItemListContainer></ItemListContainer>
                 <Filters filter={filter} setFilter={setFilter}></Filters>
             <div className='app'>
                 {loading ? (

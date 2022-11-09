@@ -10,6 +10,7 @@ import DetailContainer from './routes/DetailContainer';
 
 import ItemDetailContainer from './routes/ItemDetailContainer';
 
+import ContactForm from './components/ContactForm'
 
 import Cart from './routes/Cart'
 import Footer from './components/Footer'
@@ -43,6 +44,8 @@ return (
       <Route exact path="/TCG-cards/:id" element = {<ItemDetailContainer/>}/>
       <Route exact path="/cards" element = {<CardContainer/>}/>
       <Route exact path="/Cart" element = {<Cart/>}/>
+      <Route exact path="/Checkout" element = {<ContactForm/>}/>;
+      
     </Routes>
     
     </CartProvider>
